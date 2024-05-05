@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<!-- TASK 4.1-->
+<p id="myParagraph" onclick="changeColor('yellow')" style="padding: 20px; cursor: pointer;">
+    TRY CLICK THIS TEXT</p>
+
+<p id="myParagraph1" ondblclick="changeColordouble('blue')" style="padding: 20px; cursor: pointer;">
+    TRY DOUBLE CLICK THIS TEXT</p>
+
+<p id="myParagraph2" onmouseover="onmouse('red')" style="padding: 20px; cursor: pointer;">
+    TRY ON MOUSE OVER THIS TEXT</p>
+
+<p id="myParagraph3" onmouseout="mouseout('green')" style="padding: 20px; cursor: pointer;">
+    TRY ON MOUSE OUT THIS TEXT</p>
+
+
+<!-- TASK 4.2 -->
+<label>ONCHANGE EVENT: </label>
+<input type="text" id="myTextField" onchange="applyEffect()"><br><br>
+
+<label>FOCUS EVENT: </label>
+<input type="text" id="myTextField1" onfocus="applyEffectfocus()"><br><br>
+
+<label>ONBLUR EVENT: </label>
+<input type="text" id="myTextFiel2" onblur="applyEffectblur()"><br><br>
+
+<script>
+function changeColor(color) {
+  document.getElementById("myParagraph").style.backgroundColor = color;
+}
+
+function changeColordouble(color){
+    document.getElementById("myParagraph1").style.backgroundColor = color;
+}
+
+function onmouse(color){
+    document.getElementById("myParagraph2").style.backgroundColor = color;
+}
+
+function mouseout(color){
+    document.getElementById("myParagraph3").style.backgroundColor = color;
+}
+
+function applyEffect() {
+  var textField = document.getElementById("myTextField");
+  textField.style.borderColor = "brown";
+}
+
+function applyEffectfocus() {
+  var textField = document.getElementById("myTextField1");
+  textField.style.background = "purple";
+}
+
+function applyEffectblur() {
+  var textField = document.getElementById("myTextField2");
+  textField.style.borderColor = "pink";
+}
+</script>
+
+
+
+</body>
+</html>

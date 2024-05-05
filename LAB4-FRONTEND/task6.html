@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Animation</title>
+<style>
+  #container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border: 2px solid black;
+  }
+
+  .small-square {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+  }
+
+  #buttonContainer {
+    margin-top: 20px;
+  }
+</style>
+</head>
+<body>
+
+<div id="container">
+  <div id="smallSquare1" class="small-square"></div>
+  <div id="smallSquare2" class="small-square"></div>
+</div>
+
+<div id="buttonContainer">
+  <button onclick="startAnimation()">Start Animation</button>
+  <button onclick="stopAnimation()">Stop Animation</button>
+</div>
+
+<script>
+let animationInterval;
+
+function startAnimation() {
+  animationInterval = setInterval(moveSquares, 1000);
+}
+
+function stopAnimation() {
+  clearInterval(animationInterval);
+}
+
+function moveSquares() {
+  const smallSquare1 = document.getElementById('smallSquare1');
+  const smallSquare2 = document.getElementById('smallSquare2');
+  const containerWidth = 300;
+  const containerHeight = 300;
+  
+  // Move small square 1
+  let newX1 = Math.floor(Math.random() * (containerWidth - 20)); // Adjusted for square size
+  let newY1 = Math.floor(Math.random() * (containerHeight - 20)); // Adjusted for square size
+  smallSquare1.style.left = newX1 + 'px';
+  smallSquare1.style.top = newY1 + 'px';
+
+  // Move small square 2
+  let newX2 = Math.floor(Math.random() * (containerWidth - 20)); // Adjusted for square size
+  let newY2 = Math.floor(Math.random() * (containerHeight - 20)); // Adjusted for square size
+  smallSquare2.style.left = newX2 + 'px';
+  smallSquare2.style.top = newY2 + 'px';
+}
+</script>
+
+</body>
+</html>

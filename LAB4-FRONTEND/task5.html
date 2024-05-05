@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Task 5 - JavaScript Table Manipulation</title>
+</head>
+<body>
+
+<h2>Table</h2>
+
+<table id="myTable" border="1">
+  <!-- Table header -->
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+    </tr>
+  </thead>
+  <!-- Table body will be added dynamically using JavaScript -->
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Ahmad Faisal</td>
+      <td>ahmadfaisal@gmail.com</td>
+      <td>0199088888</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Ismail Sabri</td>
+      <td>isabri@mail.com</td>
+      <td>0199076760</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Fateh Yakin</td>
+      <td>ffateh@hotmail.com</td>
+      <td>0176067762</td>
+    </tr>
+  </tbody>
+</table>
+
+<button onclick="addRecord()">Add Record</button>
+
+<script>
+function addRecord() {
+  var table = document.getElementById("myTable").getElementsByTagName('tbody')[0];
+  var newRow = table.insertRow(table.rows.length);
+
+  var cell1 = newRow.insertCell(0);
+  var cell2 = newRow.insertCell(1);
+  var cell3 = newRow.insertCell(2);
+  var cell4 = newRow.insertCell(3);
+
+  cell1.innerHTML = table.rows.length;
+  cell2.innerHTML = "Mukhriz Jamil Asoka";
+  cell3.innerHTML = "mukriz@corp.jo";
+  cell4.innerHTML = "651181187223";
+
+  // Add event listener to newly created row for deletion
+  newRow.addEventListener("click", function() {
+    deleteRow(this);
+  });
+}
+
+function deleteRow(row) {
+  var index = row.rowIndex;
+  document.getElementById("myTable").deleteRow(index);
+}
+</script>
+
+</body>
+</html>
